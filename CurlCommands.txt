@@ -10,8 +10,8 @@ curl -X POST -H "Content-Type: application/json" -d @payloads/user.json http://l
 
 Delete
 if param is int: 
-curl -X DELETE http://localhost:5003/task_items/delete_task/1
+curl -X DELETE http://localhost:5152/task_items/delete_task/1
 
 if param is from json file :
-curl -X DELETE -H "Content-Type: application/json" -d @payloads/deleteItem.json http://localhost:5003/task_items/delete_task | jq
+curl -X DELETE -H "Content-Type: application/json" -d @payloads/deleteItem.json http://localhost:5152/task_items/delete_task | jq
 

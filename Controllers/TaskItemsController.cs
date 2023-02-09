@@ -30,11 +30,7 @@ public class TaskItemsController : ControllerBase
     [HttpGet("")]
     public IActionResult Index()
     {
-        Dictionary<string, object> data = new Dictionary<string, object>();
-
-        data.Add("task_items", _taskItemsService.GetAll());
-
-        return Ok(data);
+        return Ok(_taskItemsService.GetAll());
     }
 
     //Endpoint to return a single expense item based on id
