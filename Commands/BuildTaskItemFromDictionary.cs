@@ -36,9 +36,9 @@ public class BuildTaskItemFromDictionary
             newTaskitem.Id = int.Parse(data["id"].ToString());
         }
 
-        if (data.ContainsKey("task_name"))
+        if (data.ContainsKey("taskName"))
         {
-            newTaskitem.TaskName = data["task_name"].ToString();
+            newTaskitem.TaskName = data["taskName"].ToString();
         }
 
         if (data.ContainsKey("status"))
@@ -57,17 +57,17 @@ public class BuildTaskItemFromDictionary
         }
 
         //if team id is empty or does not exist set it to unassigned
-        if (data.ContainsKey("user_id"))
+        if (data.ContainsKey("userId"))
         {
-            int userId = int.Parse(data["user_id"].ToString());
+            int userId = int.Parse(data["userId"].ToString());
             newTaskitem.UserId = userId;
             newTaskitem.User = _userService.Find(userId);
         }
 
-        if (data.ContainsKey("priority_id"))
+        if (data.ContainsKey("priorityId"))
         {
             //if it has priority Id, assign priority id and then find priority for display
-            int priorityId = int.Parse(data["priority_id"].ToString());
+            int priorityId = int.Parse(data["priorityId"].ToString());
             newTaskitem.PriorityId = priorityId;
             newTaskitem.Priority = _priorityService.Find(priorityId);
         }

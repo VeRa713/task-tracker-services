@@ -14,18 +14,18 @@ public class ValidateSaveTaskItem
         this.Errors = new Dictionary<string, List<string>>();
 
         Errors.Add("id", new List<string>());
-        Errors.Add("task_name", new List<string>());
+        Errors.Add("taskName", new List<string>());
         Errors.Add("status", new List<string>());
-        Errors.Add("priority_id", new List<string>());
+        Errors.Add("priorityId", new List<string>());
         Errors.Add("desc", new List<string>());
-        Errors.Add("user_id", new List<string>());
+        Errors.Add("userId", new List<string>());
     }
 
     public bool HasErrors()
     {
         bool ans = false;
 
-        if (Errors["task_name"].Count > 0)
+        if (Errors["taskName"].Count > 0)
         {
             ans = true;
         }
@@ -35,7 +35,7 @@ public class ValidateSaveTaskItem
             ans = true;
         }
 
-        if (Errors["priority_id"].Count > 0)
+        if (Errors["priorityId"].Count > 0)
         {
             ans = true;
         }
@@ -45,7 +45,7 @@ public class ValidateSaveTaskItem
             ans = true;
         }
 
-        if (Errors["user_id"].Count > 0)
+        if (Errors["userId"].Count > 0)
         {
             ans = true;
         }
@@ -62,9 +62,9 @@ public class ValidateSaveTaskItem
     {
         //Task Name validation
         //check if not an empty string
-        if (!payload.ContainsKey("task_name"))
+        if (!payload.ContainsKey("taskName"))
         {
-            Errors["task_name"].Add("Task Name is required");
+            Errors["taskName"].Add("Task Name is required");
         }
 
         //Status validation
@@ -79,16 +79,16 @@ public class ValidateSaveTaskItem
         //check if not an empty string 
         //check if within range (1-3)
         //check data type
-        if (!payload.ContainsKey("priority_id"))
+        if (!payload.ContainsKey("priorityId"))
         {
-            Errors["priority_id"].Add("Priority is required");
+            Errors["priorityId"].Add("Priority is required");
         }
 
         //check data type
         //check if existing id (once team model is created)
-        if (!payload.ContainsKey("user_id"))
+        if (!payload.ContainsKey("userId"))
         {
-            Errors["user_id"].Add("User Id is required");
+            Errors["userId"].Add("User Id is required");
         }
 
         // if (!payload.ContainsKey("deadline"))
