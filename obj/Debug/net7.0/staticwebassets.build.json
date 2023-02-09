@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "bzmSeqTk6DZIGczJ9joMObBBjFwagQEJ/yOcMBC3cKQ=",
+  "Source": "task-tracker-services-v2",
+  "BasePath": "_content/task-tracker-services-v2",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
