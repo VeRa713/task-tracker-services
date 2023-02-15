@@ -24,7 +24,9 @@ public class TaskItemsMSSQLService : ITaskItemsService
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        TaskItem temp = this.Find(id);
+        _dataContext.TaskItems.Remove(temp);
+        _dataContext.SaveChanges();
     }
 
     public TaskItem Find(int id)

@@ -75,12 +75,11 @@ public class TaskItemsController : ControllerBase
         }
     }
 
-    [HttpDelete("delete_task")]
-    public IActionResult Delete([FromBody] object payload)
+    [HttpDelete("delete_task/{id}")]
+    public IActionResult Delete(int id)
     {
-        Dictionary<string, object> hash = JsonSerializer.Deserialize<Dictionary<string, object>>(payload.ToString());
-
-        int id = int.Parse(hash["id"].ToString());
+        // Dictionary<string, object> hash = JsonSerializer.Deserialize<Dictionary<string, object>>(payload.ToString());
+        // int id = int.Parse(hash["id"].ToString());
 
         _taskItemsService.Delete(id);
 
