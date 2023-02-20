@@ -6,6 +6,7 @@ curl http://localhost:5152/users | jq
 Save
 curl -X POST -H "Content-Type: application/json" -d @payloads/taskItem.json http://localhost:5152/task_items | jq
 curl -X POST -H "Content-Type: application/json" -d @payloads/priority.json http://localhost:5152/priorities | jq
+curl -X POST -H "Content-Type: application/json" -d @payloads/status.json http://localhost:5152/statuses | jq
 curl -X POST -H "Content-Type: application/json" -d @payloads/user.json http://localhost:5152/users | jq
 
 Delete

@@ -14,12 +14,14 @@ public class TaskItemsMSSQLService : ITaskItemsService
     public readonly DataContext _dataContext;
     public readonly IUserService _userService;
     public readonly IPriorityService _priorityService;
+    public readonly IStatusService _statusService;
 
-    public TaskItemsMSSQLService(DataContext dataContext, IPriorityService priorityService, IUserService userService)
+    public TaskItemsMSSQLService(DataContext dataContext, IPriorityService priorityService, IUserService userService, IStatusService statusService)
     {
         _dataContext = dataContext;
         _priorityService = priorityService;      
         _userService = userService;
+        _statusService = statusService;
     }
 
     public void Delete(int id)
@@ -42,6 +44,7 @@ public class TaskItemsMSSQLService : ITaskItemsService
         {
             task.Priority = _priorityService.Find(task.PriorityId);
             task.User = _userService.Find(task.UserId);
+            task.Status = _statusService.Find(task.StatusId);
         }
 
         return taskItem;
@@ -59,7 +62,8 @@ public class TaskItemsMSSQLService : ITaskItemsService
             //update
             TaskItem temp = this.Find(task.Id);
             temp.TaskName = task.TaskName;
-            temp.Status = task.Status;
+            temp.StatusId = task.StatusId;
+            temp.Status = _statusService.Find(task.StatusId);
             temp.Desc = task.Desc;
             temp.UserId = task.UserId;
             temp.PriorityId = task.PriorityId;

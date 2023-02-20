@@ -9,13 +9,15 @@ public class BuildTaskItemFromDictionary
     private Dictionary<string, object> data;
     private IUserService _userService;
     private IPriorityService _priorityService;
+    private IStatusService _statusService;
 
     // 1 - Constructor that passes all inputs required
-    public BuildTaskItemFromDictionary(Dictionary<string, object> hash, IPriorityService priorityService, IUserService userService)
+    public BuildTaskItemFromDictionary(Dictionary<string, object> hash, IPriorityService priorityService, IUserService userService, IStatusService statusService)
     {
         this.data = hash;
         _priorityService = priorityService;
         _userService = userService;
+        _statusService = statusService;
     }
 
     // 2 - Executable Method. Like its own Main method
@@ -23,6 +25,7 @@ public class BuildTaskItemFromDictionary
     {
         TaskItem newTaskitem = new TaskItem();
         Priority priority = new Priority();
+        Status status = new Status();
 
         // newTaskitem.Id = int.Parse(data["id"].ToString());
         // newTaskitem.TaskName = data["task_name"].ToString();
@@ -41,9 +44,11 @@ public class BuildTaskItemFromDictionary
             newTaskitem.TaskName = data["taskName"].ToString();
         }
 
-        if (data.ContainsKey("status"))
+        if (data.ContainsKey("statusId"))
         {
-            newTaskitem.Status = int.Parse(data["status"].ToString());
+            int statusId = int.Parse(data["statusId"].ToString());
+            newTaskitem.StatusId = statusId;
+            newTaskitem.Status = _statusService.Find(statusId);
         }
 
         //if desc is an empty string or does not exist set it to empty

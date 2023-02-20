@@ -78,3 +78,4 @@ C:\Users\DANIE9820\Downloads\CSharp Practice\task-tracker-services-v2\obj\Debug\
 C:\Users\DANIE9820\Downloads\CSharp Practice\task-tracker-services-v2\obj\Debug\net7.0\task-tracker-services-v2.genruntimeconfig.cache
 C:\Users\DANIE9820\Downloads\CSharp Practice\task-tracker-services-v2\obj\Debug\net7.0\ref\task-tracker-services-v2.dll
 C:\Users\DANIE9820\Downloads\CSharp Practice\task-tracker-services-v2\bin\Debug\net7.0\payloads\user.json
+C:\Users\DANIE9820\Downloads\CSharp Practice\task-tracker-services-v2\bin\Debug\net7.0\payloads\status.json

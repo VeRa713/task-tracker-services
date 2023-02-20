@@ -15,7 +15,7 @@ public class ValidateSaveTaskItem
 
         Errors.Add("id", new List<string>());
         Errors.Add("taskName", new List<string>());
-        Errors.Add("status", new List<string>());
+        Errors.Add("statusId", new List<string>());
         Errors.Add("priorityId", new List<string>());
         Errors.Add("desc", new List<string>());
         Errors.Add("userId", new List<string>());
@@ -30,7 +30,7 @@ public class ValidateSaveTaskItem
             ans = true;
         }
 
-        if (Errors["status"].Count > 0)
+        if (Errors["statusId"].Count > 0)
         {
             ans = true;
         }
@@ -70,9 +70,9 @@ public class ValidateSaveTaskItem
         //Status validation
         //check if not an empty string
         //check data type
-        if (!payload.ContainsKey("status"))
+        if (!payload.ContainsKey("statusId"))
         {
-            Errors["status"].Add("Status is required");
+            Errors["statusId"].Add("Status is required");
         }
 
         //Priority validation

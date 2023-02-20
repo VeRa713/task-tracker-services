@@ -7,6 +7,7 @@ public class DataContext : DbContext
     public DbSet<TaskItem> TaskItems { get; set; }
     public DbSet<Priority> Priorities { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<Status> Statuses { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder){
         modelBuilder.Entity<TaskItem>()

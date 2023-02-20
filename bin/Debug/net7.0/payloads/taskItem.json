@@ -1,8 +1,7 @@
 {
-    "id": 16,
     "taskName": "hi from backend",
-    "status": 1,
-    "priorityId": 3,
-    "desc": "checking if edit on backend still works",
-    "userId": 4
+    "statusId": 1,
+    "priorityId": 1,
+    "desc": "checking if backend still works",
+    "userId": 1
 }
