@@ -21,11 +21,13 @@ public class UsersController : ControllerBase
     [HttpGet("")]
     public IActionResult Index()
     {
-        Dictionary<string, object> data = new Dictionary<string, object>();
+        // Dictionary<string, object> data = new Dictionary<string, object>();
 
-        data.Add("users", _userService.GetAll());
+        // data.Add("users", _userService.GetAll());
 
-        return Ok(data);
+        // return Ok(data);
+
+        return Ok(_userService.GetAll());
     }
 
      [HttpPost("")]
