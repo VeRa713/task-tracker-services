@@ -49,6 +49,19 @@ public class TaskItemsController : ControllerBase
         return Ok(task);
     }
 
+    [HttpGet("user/{id}")]
+    public IActionResult ShowTasks(int id)
+    {
+        List<TaskItem> tasks = _taskItemsService.FindByUser(id);
+
+        if (tasks == null)
+        {
+            return Ok("No Tasks found for this user");
+        }
+
+        return Ok(tasks);
+    }
+
     [HttpPost("")]
     public IActionResult Save([FromBody] object payload)
     {

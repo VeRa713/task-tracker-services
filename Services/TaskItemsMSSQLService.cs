@@ -36,6 +36,11 @@ public class TaskItemsMSSQLService : ITaskItemsService
         return _dataContext.TaskItems.SingleOrDefault(o => o.Id == id);
     }
 
+    public List<TaskItem> FindByUser(int userId)
+    {
+        return GetAll().FindAll(x => x.UserId == userId);
+    }
+
     public List<TaskItem> GetAll()
     {
         List<TaskItem> taskItem = _dataContext.TaskItems.ToList<TaskItem>();
