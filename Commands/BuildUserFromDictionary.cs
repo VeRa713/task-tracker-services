@@ -21,14 +21,14 @@ public class BuildUserFromDictionary
             newUser.Id = int.Parse(data["id"].ToString());
         }
 
-        if (data.ContainsKey("first_name"))
+        if (data.ContainsKey("firstName"))
         {
-            newUser.FirstName = data["first_name"].ToString();
+            newUser.FirstName = data["firstName"].ToString();
         }
 
-        if (data.ContainsKey("last_name"))
+        if (data.ContainsKey("lastName"))
         {
-            newUser.LastName = data["last_name"].ToString();
+            newUser.LastName = data["lastName"].ToString();
         }
 
         if (data.ContainsKey("email"))
