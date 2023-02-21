@@ -58,4 +58,17 @@ public class UsersController : ControllerBase
 
         return Ok(message);
     }
+
+    [HttpGet("{id}")]
+    public IActionResult Show(int id)
+    {
+        User user = _userService.Find(id);
+
+        if (user == null)
+        {
+            return Ok("Task Item Not Found");
+        }
+
+        return Ok(user);
+    }
 }
