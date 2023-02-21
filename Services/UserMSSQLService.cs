@@ -46,4 +46,11 @@ public class UserMSSQLService : IUserService
 
         _dataContext.SaveChanges();
     }
+
+    public void Delete(int id)
+    {
+        User temp = this.Find(id);
+        _dataContext.Users.Remove(temp);
+        _dataContext.SaveChanges();
+    }
 }

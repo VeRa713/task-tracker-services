@@ -47,4 +47,15 @@ public class UsersController : ControllerBase
 
         return Ok(message);
     }
+
+    [HttpDelete("delete_user/{id}")]
+    public IActionResult Delete(int id)
+    {
+        _userService.Delete(id);
+
+        Dictionary<string, object> message = new Dictionary<string, object>();
+        message.Add("message", "User successfully deleted!");
+
+        return Ok(message);
+    }
 }
