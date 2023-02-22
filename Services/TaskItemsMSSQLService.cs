@@ -80,7 +80,11 @@ public class TaskItemsMSSQLService : ITaskItemsService
 
     public int[] CountByStatus()
     {
-        int[] count = new int[3] {50,30,20}; //To do, In Progress, Done
+        int todoCount = _dataContext.TaskItems.Where(t => t.StatusId == 1).Count();
+        int inProgressCount = _dataContext.TaskItems.Where(t => t.StatusId == 2).Count();
+        int doneCount = _dataContext.TaskItems.Where(t => t.StatusId == 3).Count();
+
+        int[] count = new int[3] {todoCount,inProgressCount,doneCount};
 
         return count;
     }
