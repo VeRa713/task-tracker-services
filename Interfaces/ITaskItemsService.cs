@@ -9,4 +9,5 @@ public interface ITaskItemsService
     public TaskItem Find(int id);
     public List<TaskItem> FindByUser(int userId);
     public void Delete(int id);
+    public int[] CountByStatus();
 }

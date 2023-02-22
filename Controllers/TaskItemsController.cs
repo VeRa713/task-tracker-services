@@ -103,4 +103,10 @@ public class TaskItemsController : ControllerBase
 
         return Ok(message);
     }
+
+    [HttpGet("count_task")]
+     public IActionResult CountByStatus()
+    {
+        return Ok(_taskItemsService.CountByStatus());
+    }
 }

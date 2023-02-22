@@ -77,4 +77,11 @@ public class TaskItemsMSSQLService : ITaskItemsService
 
         _dataContext.SaveChanges();
     }
+
+    public int[] CountByStatus()
+    {
+        int[] count = new int[3] {50,30,20}; //To do, In Progress, Done
+
+        return count;
+    }
 }
